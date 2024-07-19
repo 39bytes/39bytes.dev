@@ -16,5 +16,5 @@ export default defineConfig({
     },
   },
 
-  site: "https://39bytes.github.io",
+  site: "https://39bytes.github.io/39bytes.dev",
 });
