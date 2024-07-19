@@ -1,0 +1,29 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const ROUTES = {
+  home: "/",
+  blog: "/blog",
+  projects: "/projects",
+};
+
+const numRoutes = Object.keys(ROUTES).length;
+---
+
+<nav class="border-b-surface1 flex items-center gap-x-1.5 border-b p-3">
+  {
+    Object.entries(ROUTES).map(([name, route], i) => (
+      <>
+        <a
+          href={route}
+          class="text-lg font-semibold underline-offset-1 hover:underline"
+        >
+          {name}
+        </a>
+        {i !== numRoutes - 1 && <span>•</span>}
+      </>
+    ))
+  }
+  <div class="grow"></div>
+  <ThemeToggle />
+</nav>

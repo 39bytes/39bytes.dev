@@ -1,0 +1,35 @@
+---
+import TagList from "@/components/TagList.astro";
+import Layout from "./Layout.astro";
+import { type PostFrontmatter } from "@/types/blog.ts";
+
+interface Props {
+  frontmatter: PostFrontmatter;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
+  <div class="text-subtext0 font-medium">
+    {frontmatter.date.toString().slice(0, 10)}
+  </div>
+  <div class="py-1"></div>
+  <div class="flex items-center gap-x-1">
+    {
+      frontmatter.tags.map((t) => (
+        <a
+          href={`/tags/${t}`}
+          class="bg-surface2 w-fit rounded-xl px-2 text-sm"
+        >
+          {t}
+        </a>
+      ))
+    }
+  </div>
+  <div class="py-4"></div>
+  <main>
+    <slot />
+  </main>
+</Layout>

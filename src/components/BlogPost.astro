@@ -1,0 +1,30 @@
+---
+import type { PostFrontmatter } from "@/types/blog";
+
+interface Props {
+  url: string;
+  frontmatter: PostFrontmatter;
+}
+
+const {
+  url,
+  frontmatter: { title, date, description, tags },
+} = Astro.props;
+---
+
+<a href={url} class="bg-surface0/50 block rounded-md p-5">
+  <h2 class="text-2xl font-bold">{title}</h2>
+  <div class="text-subtext0 text-sm font-medium">
+    {date.toString().slice(0, 10)}
+  </div>
+  <div class="py-1"></div>
+  <div class="flex items-center gap-x-1">
+    {
+      tags.map((t) => (
+        <div class="bg-surface2 w-fit rounded-xl px-2 text-sm">{t}</div>
+      ))
+    }
+  </div>
+  <div class="py-2"></div>
+  <div class="">{description}</div>
+</a>

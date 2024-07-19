@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "proseWrap": "always",
+  "semi": true,
+  "tabWidth": 2
+}
