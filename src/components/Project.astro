@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import Link from "./Link.astro";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 interface Props {
   name: string;
@@ -9,7 +10,7 @@ interface Props {
   date: string;
   desc: string;
   tags: string[];
-  img: string;
+  img?: ImageMetadata;
 }
 
 const { name, repo, externalLink, date, desc, tags, img } = Astro.props;
@@ -57,6 +58,10 @@ const { name, repo, externalLink, date, desc, tags, img } = Astro.props;
     <div class="max-w-lg">
       <slot />
     </div>
-    <img src={img} width={144} height={144} class="bg-overlay0" />
+    {
+      img && (
+        <Image src={img} class="max-w-64 bg-overlay0" alt="Project Image" />
+      )
+    }
   </div>
 </div>
