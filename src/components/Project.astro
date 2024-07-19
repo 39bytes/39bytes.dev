@@ -58,6 +58,14 @@ const { name, repo, externalLink, date, desc, tags, img } = Astro.props;
     <div class="max-w-lg">
       <slot />
     </div>
-    {img && <Image src={img} class="max-w-64" alt="Project Image" />}
+    {
+      img && (
+        <Image
+          src={img}
+          class="mx-auto max-w-80 sm:max-w-md md:max-w-64"
+          alt="Project Image"
+        />
+      )
+    }
   </div>
 </div>
