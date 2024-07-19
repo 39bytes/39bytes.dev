@@ -1,10 +1,12 @@
 ---
 interface Props {
   href: string;
-  class: string;
+  class?: string;
 }
 
 const { href, class: className } = Astro.props;
 ---
 
-<a href={href} class:list={["underline", className]}><slot /></a>
+<a href={href} class:list={["cursor-pointer text-teal underline", className]}>
+  <slot />
+</a>

@@ -1,7 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Link from "@/components/Link.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <div>hi</div>
+<Layout title="39bytes.dev">
+  <div class="mx-auto max-w-2xl">
+    <img class="mx-auto" src="/lotus.png" width={128} height={128} />
+    <h1 class="text-center font-mono text-xl">jeff's corner</h1>
+    <div class="py-4"></div>
+
+    <div class="text-md">
+      <p>Hey, I'm Jeff.</p>
+      <p class="mt-2">
+        I'm currently a Computer Science student at
+        <Link href="https://www.mcgill.ca/">McGill University</Link>
+        and an incoming intern at
+        <Link href="https://1password.com/">1Password</Link> in the Developer Ecosystems
+        team for Fall 2024.
+      </p>
+      <p class="mt-2">
+        This website is mainly home to my blog, where I ramble about programming
+        and other topics. I'm mainly interested in Rust, functional programming,
+        systems, compilers and Linux.
+      </p>
+      <p class="mt-2">
+        You can get in touch with me <Link href="mailto:zhangjeff2014@gmail.com"
+          >by email</Link
+        > or on Discord <span class="font-bold">@3_9</span>.
+      </p>
+    </div>
+  </div>
 </Layout>

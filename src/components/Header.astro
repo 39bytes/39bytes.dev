@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const ROUTES = {
@@ -10,7 +11,7 @@ const ROUTES = {
 const numRoutes = Object.keys(ROUTES).length;
 ---
 
-<nav class="border-b-surface1 flex items-center gap-x-1.5 border-b p-3">
+<nav class="flex items-center gap-x-1.5 border-b border-b-surface1 p-3">
   {
     Object.entries(ROUTES).map(([name, route], i) => (
       <>
@@ -20,10 +21,22 @@ const numRoutes = Object.keys(ROUTES).length;
         >
           {name}
         </a>
-        {i !== numRoutes - 1 && <span>•</span>}
+        {i !== numRoutes - 1 && <span class="text-pink">•</span>}
       </>
     ))
   }
   <div class="grow"></div>
+  <a
+    href="https://github.com/39bytes"
+    class="transition-duration-300 cursor-pointer hover:text-lavender"
+  >
+    <Icon size={28} name="github" />
+  </a>
+  <a
+    href="https://github.com/39bytes"
+    class="mr-3 cursor-pointer transition duration-300 hover:text-lavender"
+  >
+    <Icon size={28} name="linkedin" />
+  </a>
   <ThemeToggle />
 </nav>

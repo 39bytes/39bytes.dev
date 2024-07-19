@@ -1,7 +1,47 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Project from "@/components/Project.astro";
+import Link from "@/components/Link.astro";
 ---
 
 <Layout title="Projects">
-  <div>stuff i've done</div>
+  <h1 class="text-2xl font-bold text-subtext0">Projects</h1>
+  <p class="italic text-subtext0">Some stuff I've made/worked on.</p>
+
+  <Project
+    name="nes.rs"
+    date="May 2024"
+    repo="https://github.com/39bytes/nes.rs"
+    img=""
+    desc="An emulator for the Nintendo Entertainment System written in Rust"
+    tags={["Rust", "Emulation", "6502 Assembly"]}
+  >
+    I built this emulator because I was curious about how emulation worked.
+    <br />
+    It's written entirely in Rust, using the <Link
+      href="https://github.com/parasyte/pixels">pixels</Link
+    > crate for windowing and
+    <Link href="https://github.com/RustAudio/cpal">cpal</Link> to play audio.
+    <br />
+    The emulation is not 100% accurate, but most games are playable.
+    <br />
+  </Project>
+  <Project
+    name="mcgill.courses"
+    date="March 2023"
+    repo="https://github.com/terror/mcgill.courses"
+    externalLink="https://mcgill.courses/"
+    img=""
+    desc="A course search and review platform for McGill University"
+    tags={["TypeScript", "Rust", "React", "MongoDB"]}
+  >
+    A couple friends and I built this together because we were dissatisfied with
+    the experience of exploring courses and searching for professor reviews when
+    building our schedules.
+    <br />
+    <br />
+    <Link href="https://mcgill.courses">mcgill.courses</Link> provides lightning
+    fast search for courses and instructors, an interactive course graph to explore
+    courses, and permits students to view and write course reviews.
+  </Project>
 </Layout>

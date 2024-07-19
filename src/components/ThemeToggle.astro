@@ -21,17 +21,13 @@
     <path d="m6.34 17.66-1.41 1.41"></path>
     <path d="m19.07 4.93-1.41 1.41"></path>
     <path
-      class="dark:stroke-lavender stroke-transparent"
+      class="stroke-transparent dark:stroke-lavender"
       d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
   </svg>
 </button>
 
 <script is:inline>
-  const theme =
-    (localStorage.getItem("theme") ??
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ? "dark"
-      : "light";
+  const theme = localStorage.getItem("theme") ?? "dark";
 
   if (theme === "light") {
     document.documentElement.classList.remove("dark");

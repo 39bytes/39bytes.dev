@@ -9,7 +9,10 @@ const posts: MarkdownInstance<PostFrontmatter>[] =
 ---
 
 <Layout title="Blog">
-  <div class="my-2">yapping</div>
+  <div class="text-2xl font-bold text-subtext0">Posts</div>
+  <p class="italic text-subtext0">Occasional musings.</p>
+
+  <div class="py-2"></div>
   {
     posts.map((post) => (
       <BlogPost url={post.url ?? ""} frontmatter={post.frontmatter} />
