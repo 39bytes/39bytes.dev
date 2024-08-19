@@ -15,20 +15,21 @@ import mario from "@/assets/mario.png";
     name="nes.rs"
     date="May 2024"
     repo="https://github.com/39bytes/nes.rs"
+    externalLink="https://39bytes.github.io/nes.rs/"
     img={mario}
     desc="An emulator for the Nintendo Entertainment System written in Rust"
-    tags={["Rust", "Emulation", "6502 Assembly"]}
+    tags={["Rust", "Emulation", "6502 Assembly", "SDL2", "WASM"]}
   >
     I built this emulator because I was always curious about how emulation
     worked.
     <br />
-    It's written entirely in Rust, using the <Link
-      href="https://github.com/parasyte/pixels">pixels</Link
-    > crate for windowing and
-    <Link href="https://github.com/RustAudio/cpal">cpal</Link> to play audio.
+    It's written in Rust using SDL2. I also created a web version by compiling it
+    to WebAssembly, which you can find <Link
+      href="https://39bytes.github.io/nes.rs/">here</Link
+    >.
     <br />
-    The emulation is not 100% accurate, but most games are playable as it implements
-    iNES Mappers 0-3.
+    The emulation is not 100% accurate, but most games are playable, and it has some
+    basic quality of life features like save states.
     <br />
     This is by far the most difficult project I've taken on at this point.
   </Project>
