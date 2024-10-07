@@ -22,10 +22,12 @@ const { name, repo, externalLink, date, desc, tags, img } = Astro.props;
     <p class="mt-2 text-sm font-bold text-lavender">{date}</p>
   </div>
   <div class="py-1"></div>
-  <div class="flex gap-x-1">
+  <div class="flex flex-wrap gap-1">
     {
       tags.map((t) => (
-        <div class="w-fit rounded-xl bg-surface2 px-2 text-sm">{t}</div>
+        <div class="w-fit text-nowrap rounded-xl bg-surface2 px-2 text-sm">
+          {t}
+        </div>
       ))
     }
   </div>
